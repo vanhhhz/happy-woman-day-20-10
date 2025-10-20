@@ -992,28 +992,93 @@ body {
   animation-play-state: paused !important;
 }
 /* === Name behind flower === */
+:root{
+  /* neon theo palette hiện tại */
+  --neon1: #ff4d88; /* hồng */
+  --neon2: #23f0ff; /* cyan */
+  --neon3: #ffd166; /* vàng ấm */
+}
+
+/* chữ nền (ẩn lúc đầu như cũ) */
 #name{
   position: fixed;
   inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+
   font-family: inherit;
   font-weight: 900;
   font-size: clamp(48px, 18vmin, 220px);
   letter-spacing: .08em;
-  color: #ff4d88;
-  text-shadow: 0 0 18px #ff4d88, 0 0 36px #ff4d88;
-  opacity: 0;
-  z-index: 0;             /* nằm sau hoa (hoa dùng 10/20/100...) */
+
+  /* neon base là trắng để nhận hue-rotate */
+  color: #ffffff;
+  /* nhiều lớp glow để dày ánh sáng */
+  text-shadow:
+    0 0 1px #fff,
+    0 0 6px var(--neon1),
+    0 0 12px var(--neon2),
+    0 0 26px var(--neon3),
+    0 0 44px var(--neon2),
+    0 0 66px var(--neon1);
+
+  opacity: 0;            /* ẩn trước khi .show */
+  z-index: 0;            /* nằm sau bông hoa */
   pointer-events: none;
-  transition: opacity 1.5s ease-in-out, transform .9s ease;
+
+  /* fade + zoom nhẹ cho mượt */
   transform: scale(.96);
+  transition: opacity 1.2s ease, transform .9s ease;
+
+  /* LED vibe: nhẹ nhàng đổi màu & nhịp sáng */
+  animation: hueCycle 16s linear infinite, glowPulse 3s ease-in-out infinite;
 }
+
+/* khi trigger từ JS */
 #name.show{
-  opacity: .22;
+  opacity: .28;          /* sáng hơn bản cũ (có thể chỉnh .22–.35) */
   transform: scale(1);
 }
+
+/* vẫn ẩn khi body đang not-loaded */
+.not-loaded #name{ opacity: 0; }
+
+/* đổi màu đều qua dải sắc */
+@keyframes hueCycle{
+  0%   { filter: hue-rotate(0deg) }
+  100% { filter: hue-rotate(360deg) }
+}
+
+/* nhịp sáng đập nhẹ như led */
+@keyframes glowPulse{
+  0%,100%{
+    text-shadow:
+      0 0 1px #fff,
+      0 0 6px var(--neon1),
+      0 0 12px var(--neon2),
+      0 0 26px var(--neon3),
+      0 0 44px var(--neon2),
+      0 0 66px var(--neon1);
+    transform: translateZ(0) scale(1);
+  }
+  50%{
+    text-shadow:
+      0 0 2px #fff,
+      0 0 10px var(--neon1),
+      0 0 22px var(--neon2),
+      0 0 46px var(--neon3),
+      0 0 76px var(--neon2),
+      0 0 110px var(--neon1);
+    transform: translateZ(0) scale(1.01);
+  }
+}
+
+/* tôn trọng người dùng hạn chế chuyển động */
+@media (prefers-reduced-motion: reduce){
+  #name{ animation: none }
+}
+
 .not-loaded #name{ opacity: 0; }
 /* Giữ ẩn trong lúc body còn not-loaded */
 .not-loaded #name{
