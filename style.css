@@ -1003,7 +1003,24 @@ body {
   }
 }
 
-
+@keyframes glowPulse {
+  0%,100%{
+    text-shadow:
+      0 0 1px #fff,
+      0 0 8px #ff9ac6,
+      0 0 18px #ff69b4,
+      0 0 36px #ff69b4,
+      0 0 64px #ff9ac6;
+  }
+  50%{
+    text-shadow:
+      0 0 3px #fff,
+      0 0 14px #ffb0d3,
+      0 0 32px #ff69b4,
+      0 0 64px #ff69b4,
+      0 0 120px #ff9ac6;  /* mạnh hơn để phát sáng rõ */
+  }
+}
 /* Giữ 1 bản duy nhất, không cần hueCycle */
 .not-loaded #name{ opacity: 0; }
 /* Glow hồng pastel quanh bông */
@@ -1076,9 +1093,60 @@ body {
 /* === NAME: gộp mọi chỉnh sửa, dán ở CUỐI FILE === */
 /* === NAME: chỉnh màu #F20F8C, sáng dần và nổi bật === */
 /* === NAME: #FF0F93, sáng rực ổn định, không flicker === */
+#name {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: inherit; font-weight: 900;
+  font-size: clamp(48px, 18vmin, 220px);
+  letter-spacing: .08em;
+
+  color: #FF0F93;                /* màu mới */
+  opacity: 0;
+  transform: scale(.96) translateZ(0);
+  pointer-events: none;
+  z-index: 25 !important;
+
+  /* neon rực nhưng không dùng filter/blend-mode */
+  text-shadow:
+    0 0 2px  #fff,
+    0 0 10px #ffa3d4,
+    0 0 22px #FF0F93,
+    0 0 48px #FF0F93,
+    0 0 96px #ffa3d4;
+
+  transition: opacity .9s ease, transform .9s ease;
+  will-change: opacity, transform, text-shadow;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#name.show {
+  opacity: .9;                   /* sáng mạnh, nổi bật */
+  transform: scale(1) translateZ(0);
+  animation: glowPulseStable 3s ease-in-out infinite;
+}
 
 /* Nhịp sáng ổn định, không bị mất frame */
-
+@keyframes glowPulseStable {
+  0%, 100% {
+    text-shadow:
+      0 0 3px  #fff,
+      0 0 14px #ffb7de,
+      0 0 30px #FF0F93,
+      0 0 64px #FF0F93,
+      0 0 120px #ffb7de;
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    text-shadow:
+      0 0 4px  #fff,
+      0 0 22px #ffc4e6,
+      0 0 44px #FF0F93,
+      0 0 92px #FF0F93,
+      0 0 160px #ffc4e6;
+    transform: scale(1.01) translateZ(0);
+  }
+}
 /* === CẬP NHẬT MÀU HOA & TÊN === */
 
 /* Cánh hoa hồng tươi */
@@ -1104,41 +1172,32 @@ body {
 
 /* === NAME: #FF2E96, neon hồng rực, ổn định === */
 #name {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0.96);
-  display: flex;
-  flex-direction: column; /* cho phép xuống dòng tự nhiên */
-  align-items: center;
-  justify-content: center;
-
-  font-family: "Pacifico", cursive;
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Pacifico", cursive !important;
   font-weight: 400;
-  font-size: clamp(36px, 10vw, 160px);
+  font-style: normal;
+  font-size: clamp(48px, 18vmin, 220px);
   letter-spacing: .08em;
-  text-align: center;
-  
-  color: #ff2e96;
-  text-shadow:
-    0 0 1px #fff,
-    0 0 8px #ff9ac6,
-    0 0 18px #ff69b4,
-    0 0 36px #ff69b4,
-    0 0 64px #ff9ac6;
 
+  color: #FF8A9D;
   opacity: 0;
-  z-index: 0;
+  transform: scale(.96) translateZ(0);
   pointer-events: none;
-  transition: opacity 1.2s ease, transform .9s ease;
-  animation: glowPulseStable 3s ease-in-out infinite;
-}
+  z-index: 25 !important;
 
-#name.show {
-  opacity: 0.35;  /* cho rực rõ hơn */
-  transform: translate(-50%, -50%) scale(1);
-}
+  text-shadow:
+    0 0 2px  #fff,
+    0 0 10px #ff9cd2,
+    0 0 22px #FF2E96,
+    0 0 48px #FF2E96,
+    0 0 96px #ffb5da;
 
+  transition: opacity .9s ease, transform .9s ease;
+  will-change: opacity, transform, text-shadow;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
 #name.show {
   opacity: .9;
