@@ -1174,11 +1174,13 @@ body {
 #name {
   position: fixed; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  font-family: inherit; font-weight: 900;
+  font-family: "Pacifico", cursive !important;
+  font-weight: 400;
+  font-style: normal;
   font-size: clamp(48px, 18vmin, 220px);
   letter-spacing: .08em;
 
-  color: #FF8AC4;                /* màu chữ mới */
+  color: #FF2E96;
   opacity: 0;
   transform: scale(.96) translateZ(0);
   pointer-events: none;
