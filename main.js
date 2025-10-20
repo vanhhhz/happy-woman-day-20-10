@@ -18,7 +18,7 @@ onload = () => {
 
     // 3) (tuỳ chọn) Hiện tên sau khi hoa nở xong
     //    Nếu bạn muốn tên xuất hiện sau ~6.5s kể từ khi hoa bắt đầu:
-    const SHOW_NAME_AFTER = 6000;
+    const SHOW_NAME_AFTER = 5750;
     setTimeout(() => {
       const nameEl = document.getElementById("name");
       if (nameEl && !nameEl.classList.contains("show")) {
