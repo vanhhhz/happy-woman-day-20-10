@@ -1084,5 +1084,100 @@ body {
 .not-loaded #name{
   opacity: 0;
 }
+/* === Toàn bộ CSS gốc của bạn ở trên === */
+
+/* === BỔ SUNG SAU CÙNG === */
+
+/* Happy Women Day fade-in */
+.happy-woman-day {
+  color: #fff;
+  font-size: 50px;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.2s ease;
+}
+.happy-woman-day.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Cánh hoa đổi thành hồng nhạt */
+.flower__leaf {
+  background-color: #ffbcd1;
+  background-image: linear-gradient(to top, #ff77a8, #ffbcd1);
+}
+
+/* Thêm hồng ánh sáng mờ quanh hoa */
+.flower__leafs::after {
+  background-color: #ffbcd1;
+  filter: blur(10vmin);
+}
+
+/* Hiệu ứng LED RGB cho chữ THÙY DƯƠNG */
+:root {
+  --neon1: #ff4d88;
+  --neon2: #23f0ff;
+  --neon3: #ffd166;
+}
+
+#name {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 900;
+  font-size: clamp(48px, 18vmin, 220px);
+  letter-spacing: 0.08em;
+  color: #fff;
+  text-shadow:
+    0 0 1px #fff,
+    0 0 6px var(--neon1),
+    0 0 12px var(--neon2),
+    0 0 26px var(--neon3),
+    0 0 44px var(--neon2),
+    0 0 66px var(--neon1);
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transform: scale(0.96);
+  transition: opacity 1.5s ease, transform 1s ease;
+  animation: hueCycle 18s linear infinite, glowPulse 3s ease-in-out infinite;
+}
+
+#name.show {
+  opacity: 0.3;
+  transform: scale(1);
+}
+.not-loaded #name { opacity: 0; }
+
+@keyframes hueCycle {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+@keyframes glowPulse {
+  0%, 100% {
+    text-shadow:
+      0 0 1px #fff,
+      0 0 6px var(--neon1),
+      0 0 12px var(--neon2),
+      0 0 26px var(--neon3),
+      0 0 44px var(--neon2),
+      0 0 66px var(--neon1);
+  }
+  50% {
+    text-shadow:
+      0 0 3px #fff,
+      0 0 10px var(--neon1),
+      0 0 20px var(--neon2),
+      0 0 40px var(--neon3),
+      0 0 70px var(--neon2),
+      0 0 100px var(--neon1);
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
