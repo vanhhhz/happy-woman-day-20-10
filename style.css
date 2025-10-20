@@ -962,9 +962,7 @@ body {
 
 /* === Toàn bộ CSS gốc của bạn ở trên === */
 
-/* === BỔ SUNG SAU CÙNG === */
-
-/* Happy Women Day fade-in */
+//* ====== Hiệu ứng fade cho dòng Happy... ====== */
 .happy-woman-day {
   color: #fff;
   font-size: 50px;
@@ -979,233 +977,50 @@ body {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
-.flower__leaf{
-  background-color: #f4afc4;
-  background-image: linear-gradient(to top, #f4afc4 10%, #ffe8f0 90%);
-  opacity: .95;
-  box-shadow:
-    inset 0 0 1.2vmin rgba(255,255,255,.55),
-    inset 0 0 2.2vmin rgba(244,175,196,.35);
-}
-.flower__leaf--4{
-  background-image: linear-gradient(to top, #f7c1d5, #ffe8f0);
-  opacity: .9;
-}
-@media (max-width: 420px){
-  #name{
-    text-shadow:
-      0 0 1px #fff,
-      0 0 6px #ff9ac6,
-      0 0 14px #ff69b4,
-      0 0 28px #ff69b4,
-      0 0 44px #ff9ac6;
-    opacity: .26; /* nhẹ tay hơn màn nhỏ */
-  }
-}
 
-@keyframes glowPulse {
-  0%,100%{
-    text-shadow:
-      0 0 1px #fff,
-      0 0 8px #ff9ac6,
-      0 0 18px #ff69b4,
-      0 0 36px #ff69b4,
-      0 0 64px #ff9ac6;
-  }
-  50%{
-    text-shadow:
-      0 0 3px #fff,
-      0 0 14px #ffb0d3,
-      0 0 32px #ff69b4,
-      0 0 64px #ff69b4,
-      0 0 120px #ff9ac6;  /* mạnh hơn để phát sáng rõ */
-  }
-}
-/* Giữ 1 bản duy nhất, không cần hueCycle */
-.not-loaded #name{ opacity: 0; }
-/* Glow hồng pastel quanh bông */
-.flower__leafs::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -100%);
-  width: 8vmin;
-  height: 8vmin;
-  background-color: #f4afc4; /* glow hồng pastel */
-  filter: blur(10vmin);
-  opacity: 0.6;
-}
-
-/* Cánh hồng pastel */
-.flower__leaf {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 8vmin;
-  height: 11vmin;
-  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #f4afc4;
-  background-image: linear-gradient(to top, #f4afc4 10%, #ffe8f0 90%);
-  transform-origin: bottom center;
-  opacity: 0.95;
-  box-shadow:
-    inset 0 0 1.2vmin rgba(255, 255, 255, 0.55),
-    inset 0 0 2.2vmin rgba(244, 175, 196, 0.35);
-}
-
-/* Cánh nhỏ (leaf--4) chuyển hồng */
-.flower__leaf--4 {
-  width: 8vmin;
-  height: 8vmin;
-  transform-origin: bottom left;
-  border-radius: 4vmin 10vmin 4vmin 4vmin;
-  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-image: linear-gradient(to top, #f7c1d5, #ffe8f0);
-  z-index: 1;
-  opacity: 0.9;
-}
-
-/* === OVERRIDE MÀU HOA & TÊN (DÁN Ở CUỐI FILE) === */
-
-/* Glow hồng xung quanh cụm cánh */
-.flowers .flower__leafs::after {
-  background-color: #f4afc4 !important; /* hồng pastel */
-  filter: blur(10vmin);
-  opacity: 0.6;
-}
-
-/* Cánh hoa hồng pastel */
+/* ====== Hoa hồng tươi #FF69B4 ====== */
 .flowers .flower__leaf {
-  background-color: #f4afc4 !important;
-  background-image: linear-gradient(to top, #f4afc4 10%, #ffe8f0 90%) !important;
-  opacity: 0.95;
-  box-shadow:
-    inset 0 0 1.2vmin rgba(255, 255, 255, 0.55),
-    inset 0 0 2.2vmin rgba(244, 175, 196, 0.35);
-}
-
-/* Cánh “nghiêng” số 4 – chuyển hồng nhạt (trước đây dễ bị để màu xanh) */
-.flowers .flower__leaf--4 {
-  background-image: linear-gradient(to top, #f7c1d5, #ffe8f0) !important;
-  opacity: 0.9;
-}
-/* === NAME: gộp mọi chỉnh sửa, dán ở CUỐI FILE === */
-/* === NAME: chỉnh màu #F20F8C, sáng dần và nổi bật === */
-/* === NAME: #FF0F93, sáng rực ổn định, không flicker === */
-#name {
-  position: fixed; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: inherit; font-weight: 900;
-  font-size: clamp(48px, 18vmin, 220px);
-  letter-spacing: .08em;
-
-  color: #FF0F93;                /* màu mới */
-  opacity: 0;
-  transform: scale(.96) translateZ(0);
-  pointer-events: none;
-  z-index: 25 !important;
-
-  /* neon rực nhưng không dùng filter/blend-mode */
-  text-shadow:
-    0 0 2px  #fff,
-    0 0 10px #ffa3d4,
-    0 0 22px #FF0F93,
-    0 0 48px #FF0F93,
-    0 0 96px #ffa3d4;
-
-  transition: opacity .9s ease, transform .9s ease;
-  will-change: opacity, transform, text-shadow;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-#name.show {
-  opacity: .9;                   /* sáng mạnh, nổi bật */
-  transform: scale(1) translateZ(0);
-  animation: glowPulseStable 3s ease-in-out infinite;
-}
-
-/* Nhịp sáng ổn định, không bị mất frame */
-@keyframes glowPulseStable {
-  0%, 100% {
-    text-shadow:
-      0 0 3px  #fff,
-      0 0 14px #ffb7de,
-      0 0 30px #FF0F93,
-      0 0 64px #FF0F93,
-      0 0 120px #ffb7de;
-    transform: scale(1) translateZ(0);
-  }
-  50% {
-    text-shadow:
-      0 0 4px  #fff,
-      0 0 22px #ffc4e6,
-      0 0 44px #FF0F93,
-      0 0 92px #FF0F93,
-      0 0 160px #ffc4e6;
-    transform: scale(1.01) translateZ(0);
-  }
-}
-/* === CẬP NHẬT MÀU HOA & TÊN === */
-
-/* Cánh hoa hồng tươi */
-.flowers .flower__leafs::after {
   background-color: #FF69B4 !important;
-  filter: blur(10vmin);
-  opacity: 0.6;
-}
-
-.flowers .flower__leaf {
-  background-color: #FF8AC4 !important;
   background-image: linear-gradient(to top, #FF69B4 10%, #FFD6E9 90%) !important;
-  opacity: 0.95;
+  opacity: .95;
   box-shadow:
     inset 0 0 1.2vmin rgba(255, 255, 255, 0.55),
     inset 0 0 2.2vmin rgba(255, 105, 180, 0.35);
 }
-
 .flowers .flower__leaf--4 {
   background-image: linear-gradient(to top, #FF8DC6, #FFD6E9) !important;
-  opacity: 0.9;
+  opacity: .9;
 }
 
-/* === NAME: #FF2E96, neon hồng rực, ổn định === */
+/* ====== Tên (font Pacifico + neon #FF2E96) ====== */
 #name {
   position: fixed; inset: 0;
   display: flex; align-items: center; justify-content: center;
-  font-family: "Pacifico", cursive !important;
+  font-family: "Pacifico", cursive;
   font-weight: 400;
-  font-style: normal;
   font-size: clamp(48px, 18vmin, 220px);
   letter-spacing: .08em;
-
-  color: #FF8A9D;
+  color: #FF2E96;
   opacity: 0;
-  transform: scale(.96) translateZ(0);
+  transform: scale(.96);
   pointer-events: none;
-  z-index: 25 !important;
-
+  z-index: 25;
   text-shadow:
     0 0 2px  #fff,
     0 0 10px #ff9cd2,
     0 0 22px #FF2E96,
     0 0 48px #FF2E96,
     0 0 96px #ffb5da;
-
   transition: opacity .9s ease, transform .9s ease;
-  will-change: opacity, transform, text-shadow;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
 }
 
 #name.show {
-  opacity: .9;
-  transform: scale(1) translateZ(0);
+  opacity: .95;
+  transform: scale(1);
   animation: glowPulseStable 3s ease-in-out infinite;
 }
 
-/* Glow ổn định, sáng mượt */
+/* ====== Glow ổn định, không flicker ====== */
 @keyframes glowPulseStable {
   0%, 100% {
     text-shadow:
@@ -1214,7 +1029,6 @@ body {
       0 0 30px #FF2E96,
       0 0 64px #FF2E96,
       0 0 120px #ffb7de;
-    transform: scale(1) translateZ(0);
   }
   50% {
     text-shadow:
@@ -1223,9 +1037,5 @@ body {
       0 0 44px #FF2E96,
       0 0 92px #FF2E96,
       0 0 160px #ffc4e6;
-    transform: scale(1.01) translateZ(0);
   }
 }
-
-/* Màu tên (THÙY DƯƠNG) – ff69b4, giữ hiệu ứng glow nhịp nhẹ */
-/*# sourceMappingURL=style.css.map */
