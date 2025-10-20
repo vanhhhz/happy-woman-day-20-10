@@ -1157,7 +1157,7 @@ body {
 }
 
 .flowers .flower__leaf {
-  background-color: #FF69B4 !important;
+  background-color: #FF8AC4 !important;
   background-image: linear-gradient(to top, #FF69B4 10%, #FFD6E9 90%) !important;
   opacity: 0.95;
   box-shadow:
@@ -1178,7 +1178,7 @@ body {
   font-size: clamp(48px, 18vmin, 220px);
   letter-spacing: .08em;
 
-  color: #FF2E96;                /* màu chữ mới */
+  color: #FF69B4;                /* màu chữ mới */
   opacity: 0;
   transform: scale(.96) translateZ(0);
   pointer-events: none;
