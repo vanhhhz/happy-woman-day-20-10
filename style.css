@@ -991,5 +991,33 @@ body {
 .not-loaded * {
   animation-play-state: paused !important;
 }
+/* === Name behind flower === */
+#name{
+  position: fixed;             /* bám full màn hình */
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;         /* cùng font với .happy-woman-day */
+  font-weight: 900;
+  font-size: clamp(48px, 18vmin, 220px); /* rất to, responsive */
+  letter-spacing: .08em;
+  color: #ff4d88;
+  text-shadow: 0 0 18px #ff4d88, 0 0 36px #ff4d88;
+  opacity: 0;                   /* ẩn khi mới vào */
+  z-index: 0;                   /* sau hoa (hoa dùng z-index 10, 20, 100...) */
+  pointer-events: none;
+  transition: opacity 1.5s ease-in-out;
+}
+
+/* Khi trigger -> hiện mờ để không lấn hoa */
+#name.show{
+  opacity: 0.22;
+}
+
+/* Giữ ẩn trong lúc body còn not-loaded */
+.not-loaded #name{
+  opacity: 0;
+}
 
 /*# sourceMappingURL=style.css.map */
