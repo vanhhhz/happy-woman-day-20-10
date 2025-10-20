@@ -12,5 +12,5 @@ onload = () => {
       nameEl.classList.add("show");
     }
     clearTimeout(showName);
-  }, 1500);
+  }, 6500);
 };
