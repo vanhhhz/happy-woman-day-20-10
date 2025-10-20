@@ -980,8 +980,8 @@ body {
   transform: translateX(-50%) translateY(0);
 }
 #name.show {
-  opacity: .42;  /* sáng hơn rõ rệt */
-  filter: brightness(1.3);  /* tăng độ sáng toàn bộ chữ */
+  opacity: .60;  /* sáng hơn rõ rệt */
+  filter: brightness(1.5);  /* tăng độ sáng toàn bộ chữ */
   transform: scale(1.03);   /* phóng nhẹ cho cảm giác nổi */
 }
 
