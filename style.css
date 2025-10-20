@@ -31,12 +31,7 @@ body {
   filter: blur(0.1vmin);
 }
 
-.happy-woman-day {
-  color: white;
-  font-size: 50px;
-  position: fixed;
-  top: 80px;
-}
+
 
 .flowers {
   position: relative;
@@ -129,30 +124,8 @@ body {
 .flower__leafs--3 {
   animation-delay: 1.7s;
 }
-.flower__leafs::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  transform: translate(-50%, -100%);
-  width: 8vmin;
-  height: 8vmin;
-  background-color: #6bf0ff;
-  filter: blur(10vmin);
-}
-.flower__leaf {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 8vmin;
-  height: 11vmin;
-  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
-  background-color: #a7ffee;
-  background-image: linear-gradient(to top, #54b8aa, #a7ffee);
-  transform-origin: bottom center;
-  opacity: 0.9;
-  box-shadow: inset 0 0 2vmin rgba(255, 255, 255, 0.5);
-}
+
+
 .flower__leaf--1 {
   transform: translate(-10%, 1%) rotateY(40deg) rotateX(-50deg);
 }
@@ -162,16 +135,7 @@ body {
 .flower__leaf--3 {
   transform: translate(-90%, 0%) rotateY(45deg) rotateX(50deg);
 }
-.flower__leaf--4 {
-  width: 8vmin;
-  height: 8vmin;
-  transform-origin: bottom left;
-  border-radius: 4vmin 10vmin 4vmin 4vmin;
-  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
-  background-image: linear-gradient(to top, #39c6d6, #a7ffee);
-  z-index: 1;
-  opacity: 0.8;
-}
+
 .flower__white-circle {
   position: absolute;
   left: -3.5vmin;
@@ -190,12 +154,12 @@ body {
   width: 60%;
   height: 60%;
   border-radius: inherit;
-  background-image: repeating-linear-gradient(300deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, rgb(255, 235, 18), rgb(255, 206, 0));
+  background-image: repeating-linear-gradient(300deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(112.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(45deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(22.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(135deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(157.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), repeating-linear-gradient(67.5deg, rgba(0, 0, 0, 0.03) 0px, rgba(0, 0, 0, 0.03) 1px, transparent 1px, transparent 12px), linear-gradient(90deg, #ffe3ee, #ffc3d9);
 }
 .flower__line {
   height: 55vmin;
   width: 1.5vmin;
-  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)), linear-gradient(to top, transparent 10%, #14757a, #39c6d6);
+  background-image: linear-gradient(to left, rgba(0, 0, 0, 0.2), transparent, rgba(255, 255, 255, 0.2)), linear-gradient(to top, transparent 10%, #0e5f63, #2aaabd);
   box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.5);
   animation: grow-flower-tree 4s backwards;
 }
@@ -252,7 +216,7 @@ body {
   animation: light-ans 4s linear infinite backwards;
 }
 .flower__light:nth-child(odd) {
-  background-color: #23f0ff;
+  background-color: #ffd1e1;
 }
 .flower__light--1 {
   left: -2vmin;
@@ -438,15 +402,11 @@ body {
     transform: rotate(10deg) scale(0);
   }
 }
-.flower__grass__overlay {
-  position: absolute;
-  top: -10%;
-  right: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  filter: blur(1.5vmin);
-  z-index: 100;
+.flower__grass__overlay{
+  z-index: 5;                 /* từ 100 xuống 5 để nằm dưới #name (15) */
+  opacity: 0.45;              /* nhẹ tay hơn chút */
+  mix-blend-mode: multiply;   /* bảo toàn hiệu ứng làm tối lá, không che chữ */
+  pointer-events: none;
 }
 .flower__g-long {
   --w: 2vmin;
@@ -992,4 +952,201 @@ body {
   animation-play-state: paused !important;
 }
 
+
+/* tôn trọng người dùng hạn chế chuyển động */
+@media (prefers-reduced-motion: reduce){
+  #name{ animation: none }
+}
+
+.not-loaded #name{ opacity: 0; }
+
+/* === Toàn bộ CSS gốc của bạn ở trên === */
+
+/* === BỔ SUNG SAU CÙNG === */
+
+/* Happy Women Day fade-in */
+.happy-woman-day {
+  color: #fff;
+  font-size: 50px;
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-10px);
+  opacity: 0;
+  transition: opacity 1.5s ease, transform 1.2s ease;
+}
+.happy-woman-day.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+.flower__leaf{
+  background-color: #f4afc4;
+  background-image: linear-gradient(to top, #f4afc4 10%, #ffe8f0 90%);
+  opacity: .95;
+  box-shadow:
+    inset 0 0 1.2vmin rgba(255,255,255,.55),
+    inset 0 0 2.2vmin rgba(244,175,196,.35);
+}
+.flower__leaf--4{
+  background-image: linear-gradient(to top, #f7c1d5, #ffe8f0);
+  opacity: .9;
+}
+@media (max-width: 420px){
+  #name{
+    text-shadow:
+      0 0 1px #fff,
+      0 0 6px #ff9ac6,
+      0 0 14px #ff69b4,
+      0 0 28px #ff69b4,
+      0 0 44px #ff9ac6;
+    opacity: .26; /* nhẹ tay hơn màn nhỏ */
+  }
+}
+
+@keyframes glowPulse {
+  0%,100%{
+    text-shadow:
+      0 0 1px #fff,
+      0 0 8px #ff9ac6,
+      0 0 18px #ff69b4,
+      0 0 36px #ff69b4,
+      0 0 64px #ff9ac6;
+  }
+  50%{
+    text-shadow:
+      0 0 3px #fff,
+      0 0 14px #ffb0d3,
+      0 0 32px #ff69b4,
+      0 0 64px #ff69b4,
+      0 0 120px #ff9ac6;  /* mạnh hơn để phát sáng rõ */
+  }
+}
+/* Giữ 1 bản duy nhất, không cần hueCycle */
+.not-loaded #name{ opacity: 0; }
+/* Glow hồng pastel quanh bông */
+.flower__leafs::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-50%, -100%);
+  width: 8vmin;
+  height: 8vmin;
+  background-color: #f4afc4; /* glow hồng pastel */
+  filter: blur(10vmin);
+  opacity: 0.6;
+}
+
+/* Cánh hồng pastel */
+.flower__leaf {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 8vmin;
+  height: 11vmin;
+  border-radius: 51% 49% 47% 53%/44% 45% 55% 69%;
+  background-color: #f4afc4;
+  background-image: linear-gradient(to top, #f4afc4 10%, #ffe8f0 90%);
+  transform-origin: bottom center;
+  opacity: 0.95;
+  box-shadow:
+    inset 0 0 1.2vmin rgba(255, 255, 255, 0.55),
+    inset 0 0 2.2vmin rgba(244, 175, 196, 0.35);
+}
+
+/* Cánh nhỏ (leaf--4) chuyển hồng */
+.flower__leaf--4 {
+  width: 8vmin;
+  height: 8vmin;
+  transform-origin: bottom left;
+  border-radius: 4vmin 10vmin 4vmin 4vmin;
+  transform: translate(0%, 18%) rotateX(70deg) rotate(-43deg);
+  background-image: linear-gradient(to top, #f7c1d5, #ffe8f0);
+  z-index: 1;
+  opacity: 0.9;
+}
+
+/* === OVERRIDE MÀU HOA & TÊN (DÁN Ở CUỐI FILE) === */
+
+/* Glow hồng xung quanh cụm cánh */
+.flowers .flower__leafs::after {
+  background-color: #f4afc4 !important; /* hồng pastel */
+  filter: blur(10vmin);
+  opacity: 0.6;
+}
+
+/* Cánh hoa hồng pastel */
+.flowers .flower__leaf {
+  background-color: #f4afc4 !important;
+  background-image: linear-gradient(to top, #f4afc4 10%, #ffe8f0 90%) !important;
+  opacity: 0.95;
+  box-shadow:
+    inset 0 0 1.2vmin rgba(255, 255, 255, 0.55),
+    inset 0 0 2.2vmin rgba(244, 175, 196, 0.35);
+}
+
+/* Cánh “nghiêng” số 4 – chuyển hồng nhạt (trước đây dễ bị để màu xanh) */
+.flowers .flower__leaf--4 {
+  background-image: linear-gradient(to top, #f7c1d5, #ffe8f0) !important;
+  opacity: 0.9;
+}
+/* === NAME: gộp mọi chỉnh sửa, dán ở CUỐI FILE === */
+/* === NAME: chỉnh màu #F20F8C, sáng dần và nổi bật === */
+/* === NAME: #FF0F93, sáng rực ổn định, không flicker === */
+#name {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: inherit; font-weight: 900;
+  font-size: clamp(48px, 18vmin, 220px);
+  letter-spacing: .08em;
+
+  color: #FF0F93;                /* màu mới */
+  opacity: 0;
+  transform: scale(.96) translateZ(0);
+  pointer-events: none;
+  z-index: 25 !important;
+
+  /* neon rực nhưng không dùng filter/blend-mode */
+  text-shadow:
+    0 0 2px  #fff,
+    0 0 10px #ffa3d4,
+    0 0 22px #FF0F93,
+    0 0 48px #FF0F93,
+    0 0 96px #ffa3d4;
+
+  transition: opacity .9s ease, transform .9s ease;
+  will-change: opacity, transform, text-shadow;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#name.show {
+  opacity: .9;                   /* sáng mạnh, nổi bật */
+  transform: scale(1) translateZ(0);
+  animation: glowPulseStable 3s ease-in-out infinite;
+}
+
+/* Nhịp sáng ổn định, không bị mất frame */
+@keyframes glowPulseStable {
+  0%, 100% {
+    text-shadow:
+      0 0 3px  #fff,
+      0 0 14px #ffb7de,
+      0 0 30px #FF0F93,
+      0 0 64px #FF0F93,
+      0 0 120px #ffb7de;
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    text-shadow:
+      0 0 4px  #fff,
+      0 0 22px #ffc4e6,
+      0 0 44px #FF0F93,
+      0 0 92px #FF0F93,
+      0 0 160px #ffc4e6;
+    transform: scale(1.01) translateZ(0);
+  }
+}
+
+/* Màu tên (THÙY DƯƠNG) – ff69b4, giữ hiệu ứng glow nhịp nhẹ */
 /*# sourceMappingURL=style.css.map */
