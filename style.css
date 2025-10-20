@@ -1147,6 +1147,83 @@ body {
     transform: scale(1.01) translateZ(0);
   }
 }
+/* === CẬP NHẬT MÀU HOA & TÊN === */
+
+/* Cánh hoa hồng tươi */
+.flowers .flower__leafs::after {
+  background-color: #FF69B4 !important;
+  filter: blur(10vmin);
+  opacity: 0.6;
+}
+
+.flowers .flower__leaf {
+  background-color: #FF69B4 !important;
+  background-image: linear-gradient(to top, #FF69B4 10%, #FFD6E9 90%) !important;
+  opacity: 0.95;
+  box-shadow:
+    inset 0 0 1.2vmin rgba(255, 255, 255, 0.55),
+    inset 0 0 2.2vmin rgba(255, 105, 180, 0.35);
+}
+
+.flowers .flower__leaf--4 {
+  background-image: linear-gradient(to top, #FF8DC6, #FFD6E9) !important;
+  opacity: 0.9;
+}
+
+/* === NAME: #FF2E96, neon hồng rực, ổn định === */
+#name {
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: inherit; font-weight: 900;
+  font-size: clamp(48px, 18vmin, 220px);
+  letter-spacing: .08em;
+
+  color: #FF2E96;                /* màu chữ mới */
+  opacity: 0;
+  transform: scale(.96) translateZ(0);
+  pointer-events: none;
+  z-index: 25 !important;
+
+  text-shadow:
+    0 0 2px  #fff,
+    0 0 10px #ff9cd2,
+    0 0 22px #FF2E96,
+    0 0 48px #FF2E96,
+    0 0 96px #ffb5da;
+
+  transition: opacity .9s ease, transform .9s ease;
+  will-change: opacity, transform, text-shadow;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#name.show {
+  opacity: .9;
+  transform: scale(1) translateZ(0);
+  animation: glowPulseStable 3s ease-in-out infinite;
+}
+
+/* Glow ổn định, sáng mượt */
+@keyframes glowPulseStable {
+  0%, 100% {
+    text-shadow:
+      0 0 3px  #fff,
+      0 0 14px #ffb7de,
+      0 0 30px #FF2E96,
+      0 0 64px #FF2E96,
+      0 0 120px #ffb7de;
+    transform: scale(1) translateZ(0);
+  }
+  50% {
+    text-shadow:
+      0 0 4px  #fff,
+      0 0 22px #ffc4e6,
+      0 0 44px #FF2E96,
+      0 0 92px #FF2E96,
+      0 0 160px #ffc4e6;
+    transform: scale(1.01) translateZ(0);
+  }
+}
 
 /* Màu tên (THÙY DƯƠNG) – ff69b4, giữ hiệu ứng glow nhịp nhẹ */
 /*# sourceMappingURL=style.css.map */
