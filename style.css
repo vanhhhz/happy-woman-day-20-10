@@ -1076,38 +1076,6 @@ body {
 /* === NAME: gộp mọi chỉnh sửa, dán ở CUỐI FILE === */
 /* === NAME: chỉnh màu #F20F8C, sáng dần và nổi bật === */
 /* === NAME: #FF0F93, sáng rực ổn định, không flicker === */
-#name {
-  position: fixed; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: inherit; font-weight: 900;
-  font-size: clamp(48px, 18vmin, 220px);
-  letter-spacing: .08em;
-
-  color: #FF0F93;                /* màu mới */
-  opacity: 0;
-  transform: scale(.96) translateZ(0);
-  pointer-events: none;
-  z-index: 25 !important;
-
-  /* neon rực nhưng không dùng filter/blend-mode */
-  text-shadow:
-    0 0 2px  #fff,
-    0 0 10px #ffa3d4,
-    0 0 22px #FF0F93,
-    0 0 48px #FF0F93,
-    0 0 96px #ffa3d4;
-
-  transition: opacity .9s ease, transform .9s ease;
-  will-change: opacity, transform, text-shadow;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
-}
-
-#name.show {
-  opacity: .9;                   /* sáng mạnh, nổi bật */
-  transform: scale(1) translateZ(0);
-  animation: glowPulseStable 3s ease-in-out infinite;
-}
 
 /* Nhịp sáng ổn định, không bị mất frame */
 
@@ -1136,32 +1104,41 @@ body {
 
 /* === NAME: #FF2E96, neon hồng rực, ổn định === */
 #name {
-  position: fixed; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  font-family: "Pacifico", cursive !important;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.96);
+  display: flex;
+  flex-direction: column; /* cho phép xuống dòng tự nhiên */
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Pacifico", cursive;
   font-weight: 400;
-  font-style: normal;
-  font-size: clamp(48px, 18vmin, 220px);
+  font-size: clamp(36px, 10vw, 160px);
   letter-spacing: .08em;
-
-  color: #ff3399;
-  opacity: 0;
-  transform: scale(.96) translateZ(0);
-  pointer-events: none;
-  z-index: 25 !important;
-
+  text-align: center;
+  
+  color: #ff2e96;
   text-shadow:
-    0 0 2px  #fff,
-    0 0 10px #ff9cd2,
-    0 0 22px #FF2E96,
-    0 0 48px #FF2E96,
-    0 0 96px #ffb5da;
+    0 0 1px #fff,
+    0 0 8px #ff9ac6,
+    0 0 18px #ff69b4,
+    0 0 36px #ff69b4,
+    0 0 64px #ff9ac6;
 
-  transition: opacity .9s ease, transform .9s ease;
-  will-change: opacity, transform, text-shadow;
-  backface-visibility: hidden;
-  -webkit-font-smoothing: antialiased;
+  opacity: 0;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity 1.2s ease, transform .9s ease;
+  animation: glowPulseStable 3s ease-in-out infinite;
 }
+
+#name.show {
+  opacity: 0.35;  /* cho rực rõ hơn */
+  transform: translate(-50%, -50%) scale(1);
+}
+
 
 #name.show {
   opacity: .9;
