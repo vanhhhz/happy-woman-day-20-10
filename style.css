@@ -979,14 +979,6 @@ body {
   opacity: 1;
   transform: translateX(-50%) translateY(0);
 }
-#name.show {
-  opacity: .60;  /* sáng hơn rõ rệt */
-  filter: brightness(1.5);  /* tăng độ sáng toàn bộ chữ */
-  transform: scale(1.03);   /* phóng nhẹ cho cảm giác nổi */
-}
-
-
-
 .flower__leaf{
   background-color: #f4afc4;
   background-image: linear-gradient(to top, #f4afc4 10%, #ffe8f0 90%);
@@ -1073,32 +1065,7 @@ body {
   z-index: 1;
   opacity: 0.9;
 }
-#name{
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: inherit;
-  font-weight: 900;
-  font-size: clamp(48px, 18vmin, 220px);
-  letter-spacing: .08em;
 
-  color: #ff69b4; /* màu tên */
-  text-shadow:
-    0 0 1px #fff,
-    0 0 8px #ff9ac6,
-    0 0 18px #ff69b4,
-    0 0 36px #ff69b4,
-    0 0 64px #ff9ac6;
-
-  opacity: 0;
-  z-index: 0;
-  pointer-events: none;
-  transform: scale(.96);
-  transition: opacity 1.2s ease, transform .9s ease;
-  animation: glowPulse 3s ease-in-out infinite; /* nhịp sáng nhẹ */
-}
 /* === OVERRIDE MÀU HOA & TÊN (DÁN Ở CUỐI FILE) === */
 
 /* Glow hồng xung quanh cụm cánh */
@@ -1123,17 +1090,67 @@ body {
   background-image: linear-gradient(to top, #f7c1d5, #ffe8f0) !important;
   opacity: 0.9;
 }
+/* === NAME: gộp mọi chỉnh sửa, dán ở CUỐI FILE === */
+#name{
+  position: fixed; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: inherit; font-weight: 900;
+  font-size: clamp(48px, 18vmin, 220px);
+  letter-spacing: .08em;
 
-/* Màu tên (THÙY DƯƠNG) – ff69b4, giữ hiệu ứng glow nhịp nhẹ */
-#name {
-  color: #ff69b4 !important;
+  color: #ff69b4;                  /* màu tên */
+  opacity: 0;                      /* ẩn lúc đầu */
+  transform: scale(.96);
+  pointer-events: none;
+
+  z-index: 25 !important;          /* nổi lên trên hoa/cỏ */
+  mix-blend-mode: screen;          /* làm sáng trên nền đen */
+  filter: brightness(1.6) contrast(1.2);
+
+  /* glow mạnh để nổi bật */
   text-shadow:
-    0 0 1px #fff,
-    0 0 8px #ff9ac6,
-    0 0 18px #ff69b4,
-    0 0 36px #ff69b4,
-    0 0 64px #ff9ac6;
-  animation: glowPulse 3s ease-in-out infinite;
+    0 0 4px #fff,
+    0 0 16px #ff9ac6,
+    0 0 32px #ff69b4,
+    0 0 72px #ff69b4,
+    0 0 128px #ff9ac6;
+
+  transition: opacity .9s ease, transform .9s ease;
 }
 
+#name.show{
+  opacity: .85;                    /* bừng sáng rõ rệt */
+  transform: scale(1);
+  animation: nameGlowUp 2.2s ease-out forwards, glowPulse 3s 2.2s ease-in-out infinite;
+}
+
+/* Nhịp sáng nhẹ sau khi bừng sáng */
+@keyframes glowPulse{
+  0%,100%{
+    text-shadow:
+      0 0 4px #fff,
+      0 0 16px #ff9ac6,
+      0 0 32px #ff69b4,
+      0 0 72px #ff69b4,
+      0 0 128px #ff9ac6;
+    transform: scale(1);
+  }
+  50%{
+    text-shadow:
+      0 0 6px #fff,
+      0 0 24px #ffb0d3,
+      0 0 48px #ff69b4,
+      0 0 96px #ff69b4,
+      0 0 160px #ff9ac6;
+    transform: scale(1.01);
+  }
+}
+
+/* Bật sáng dần khi .show được thêm */
+@keyframes nameGlowUp{
+  0%   { opacity: .2; filter: brightness(1) contrast(1); }
+  100% { opacity: .85; filter: brightness(1.6) contrast(1.2); }
+}
+
+/* Màu tên (THÙY DƯƠNG) – ff69b4, giữ hiệu ứng glow nhịp nhẹ */
 /*# sourceMappingURL=style.css.map */
