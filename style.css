@@ -402,15 +402,11 @@ body {
     transform: rotate(10deg) scale(0);
   }
 }
-.flower__grass__overlay {
-  position: absolute;
-  top: -10%;
-  right: 0%;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  filter: blur(1.5vmin);
-  z-index: 100;
+.flower__grass__overlay{
+  z-index: 5;                 /* từ 100 xuống 5 để nằm dưới #name (15) */
+  opacity: 0.45;              /* nhẹ tay hơn chút */
+  mix-blend-mode: multiply;   /* bảo toàn hiệu ứng làm tối lá, không che chữ */
+  pointer-events: none;
 }
 .flower__g-long {
   --w: 2vmin;
