@@ -1180,7 +1180,7 @@ body {
   font-size: clamp(48px, 18vmin, 220px);
   letter-spacing: .08em;
 
-  color: #FF2E96;
+  color: #FF8A9D;
   opacity: 0;
   transform: scale(.96) translateZ(0);
   pointer-events: none;
