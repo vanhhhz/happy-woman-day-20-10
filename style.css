@@ -1003,24 +1003,7 @@ body {
   }
 }
 
-@keyframes glowPulse {
-  0%,100%{
-    text-shadow:
-      0 0 1px #fff,
-      0 0 8px #ff9ac6,
-      0 0 18px #ff69b4,
-      0 0 36px #ff69b4,
-      0 0 64px #ff9ac6;
-  }
-  50%{
-    text-shadow:
-      0 0 3px #fff,
-      0 0 14px #ffb0d3,
-      0 0 32px #ff69b4,
-      0 0 64px #ff69b4,
-      0 0 120px #ff9ac6;  /* mạnh hơn để phát sáng rõ */
-  }
-}
+
 /* Giữ 1 bản duy nhất, không cần hueCycle */
 .not-loaded #name{ opacity: 0; }
 /* Glow hồng pastel quanh bông */
@@ -1127,26 +1110,7 @@ body {
 }
 
 /* Nhịp sáng ổn định, không bị mất frame */
-@keyframes glowPulseStable {
-  0%, 100% {
-    text-shadow:
-      0 0 3px  #fff,
-      0 0 14px #ffb7de,
-      0 0 30px #FF0F93,
-      0 0 64px #FF0F93,
-      0 0 120px #ffb7de;
-    transform: scale(1) translateZ(0);
-  }
-  50% {
-    text-shadow:
-      0 0 4px  #fff,
-      0 0 22px #ffc4e6,
-      0 0 44px #FF0F93,
-      0 0 92px #FF0F93,
-      0 0 160px #ffc4e6;
-    transform: scale(1.01) translateZ(0);
-  }
-}
+
 /* === CẬP NHẬT MÀU HOA & TÊN === */
 
 /* Cánh hoa hồng tươi */
