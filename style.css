@@ -1092,62 +1092,60 @@ body {
 }
 /* === NAME: gộp mọi chỉnh sửa, dán ở CUỐI FILE === */
 /* === NAME: chỉnh màu #F20F8C, sáng dần và nổi bật === */
-#name{
+/* === NAME: #FF0F93, sáng rực ổn định, không flicker === */
+#name {
   position: fixed; inset: 0;
   display: flex; align-items: center; justify-content: center;
   font-family: inherit; font-weight: 900;
   font-size: clamp(48px, 18vmin, 220px);
   letter-spacing: .08em;
 
-  color: #F20F8C;                 /* màu mới */
+  color: #FF0F93;                /* màu mới */
   opacity: 0;
-  transform: scale(.96);
+  transform: scale(.96) translateZ(0);
   pointer-events: none;
-
   z-index: 25 !important;
-  mix-blend-mode: screen;
-  filter: brightness(1.6) contrast(1.2);
 
+  /* neon rực nhưng không dùng filter/blend-mode */
   text-shadow:
-    0 0 4px #fff,
-    0 0 16px #ff9ac6,
-    0 0 32px #F20F8C,
-    0 0 72px #F20F8C,
-    0 0 128px #ff9ac6;
+    0 0 2px  #fff,
+    0 0 10px #ffa3d4,
+    0 0 22px #FF0F93,
+    0 0 48px #FF0F93,
+    0 0 96px #ffa3d4;
 
   transition: opacity .9s ease, transform .9s ease;
+  will-change: opacity, transform, text-shadow;
+  backface-visibility: hidden;
+  -webkit-font-smoothing: antialiased;
 }
 
-#name.show{
-  opacity: .85;
-  transform: scale(1);
-  animation: nameGlowUp 2.2s ease-out forwards, glowPulse 3s 2.2s ease-in-out infinite;
+#name.show {
+  opacity: .9;                   /* sáng mạnh, nổi bật */
+  transform: scale(1) translateZ(0);
+  animation: glowPulseStable 3s ease-in-out infinite;
 }
 
-@keyframes glowPulse{
-  0%,100%{
+/* Nhịp sáng ổn định, không bị mất frame */
+@keyframes glowPulseStable {
+  0%, 100% {
     text-shadow:
-      0 0 4px #fff,
-      0 0 16px #ff9ac6,
-      0 0 32px #F20F8C,
-      0 0 72px #F20F8C,
-      0 0 128px #ff9ac6;
-    transform: scale(1);
+      0 0 3px  #fff,
+      0 0 14px #ffb7de,
+      0 0 30px #FF0F93,
+      0 0 64px #FF0F93,
+      0 0 120px #ffb7de;
+    transform: scale(1) translateZ(0);
   }
-  50%{
+  50% {
     text-shadow:
-      0 0 6px #fff,
-      0 0 24px #ffb0d3,
-      0 0 48px #F20F8C,
-      0 0 96px #F20F8C,
-      0 0 160px #ff9ac6;
-    transform: scale(1.01);
+      0 0 4px  #fff,
+      0 0 22px #ffc4e6,
+      0 0 44px #FF0F93,
+      0 0 92px #FF0F93,
+      0 0 160px #ffc4e6;
+    transform: scale(1.01) translateZ(0);
   }
-}
-
-@keyframes nameGlowUp{
-  0%   { opacity: .2; filter: brightness(1) contrast(1); }
-  100% { opacity: .85; filter: brightness(1.6) contrast(1.2); }
 }
 
 /* Màu tên (THÙY DƯƠNG) – ff69b4, giữ hiệu ứng glow nhịp nhẹ */
